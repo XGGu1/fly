@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "player_die",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.8,
+  "sample": 5,
+  "speed": 1,
+  "wrapMode": 0,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "9e5fa6c8-782a-4692-a7dc-7ae1362efdba"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "36900058-16ba-4213-9cca-0bbf2e8a3967"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "3d80e20c-235b-4b73-b8cb-15cd256b1671"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "c48cf9ad-b645-405e-9fc3-5ca4f2bd2ea7"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
