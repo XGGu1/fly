@@ -3,7 +3,8 @@
     "default",
     "enemy",
     "bullet",
-    "player"
+    "player",
+    "enemyBullet"
   ],
   "collision-matrix": [
     [
@@ -24,6 +25,14 @@
       false,
       true,
       false,
+      false,
+      true
+    ],
+    [
+      false,
+      false,
+      false,
+      true,
       false
     ]
   ],

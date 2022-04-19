@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "boss_die",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1.3333333333333333,
+  "sample": 3,
+  "speed": 1,
+  "wrapMode": 0,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "020a0891-0763-45d4-a022-e48ca72b0604"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "539a61f6-0bf2-49a7-8358-714a1b6a9d6a"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "6ef5f79b-8576-4ee6-88b4-8f1f4e285e87"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "b7dc8d7c-888b-4d58-8cf2-4d6032b00815"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

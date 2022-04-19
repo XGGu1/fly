@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "player_die",
+  "_name": "enemy2_die",
   "_objFlags": 0,
   "_native": "",
   "_duration": 0.8,
@@ -14,36 +14,30 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "9e5fa6c8-782a-4692-a7dc-7ae1362efdba"
+              "__uuid__": "0f6dd9af-7fd9-42b1-af50-41ff32a1d119"
             }
           },
           {
             "frame": 0.2,
             "value": {
-              "__uuid__": "36900058-16ba-4213-9cca-0bbf2e8a3967"
+              "__uuid__": "663650fb-597a-49e9-b9cd-4239959c6484"
             }
           },
           {
             "frame": 0.4,
             "value": {
-              "__uuid__": "3d80e20c-235b-4b73-b8cb-15cd256b1671"
+              "__uuid__": "77b7464c-de8d-4358-a366-640b1e12bff6"
             }
           },
           {
             "frame": 0.6,
             "value": {
-              "__uuid__": "c48cf9ad-b645-405e-9fc3-5ca4f2bd2ea7"
+              "__uuid__": "7e6a2615-c34a-4463-952c-5be7eede10b4"
             }
           }
         ]
       }
     }
   },
-  "events": [
-    {
-      "frame": 0.8,
-      "func": "disappear",
-      "params": []
-    }
-  ]
+  "events": []
 }

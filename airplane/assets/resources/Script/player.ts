@@ -1,4 +1,5 @@
 import enemy from "./enemy";
+import enemy2 from "./enemy2";
 import { Global } from "./Global";
 
 const { ccclass, property } = cc._decorator;
@@ -9,19 +10,30 @@ export default class player extends cc.Component {
     @property(cc.Prefab)
     bulletPre: cc.Prefab = null;
 
+    @property(cc.Node)
+    Start: cc.Node = null;
+
+
     isPlay: string = "standby";
 
     // nodePool: cc.NodePool;//对象池
     bullet: cc.Node;//子弹
 
     onCollisionEnter(other) {
+        this.node.getComponent(cc.Animation).play("player_die");
+        this.isPlay = "die";
         if (other.tag == 1) {
-            this.node.getComponent(cc.Animation).play("player_die");
             other.getComponent(enemy).die();
-            this.isPlay = "die";
+        } else if (other.tag == 2) {
+            other.getComponent(enemy2).die();
         };
     }
 
+    disappear() {
+        this.node.active = false
+        this.node.getComponent(cc.Animation).play("player_live");
+        this.Start.active = true;
+    }
     bulletManager() {
         this.node.on(cc.Node.EventType.TOUCH_MOVE, (event: cc.Event.EventTouch) => {
             this.node.setPosition(event.getLocation());
@@ -35,7 +47,6 @@ export default class player extends cc.Component {
             Global.nodePool.put(this.bullet);
         }
         this.schedule(() => {
-            //this.isPlay = true
             if (this.isPlay == "playing") {
                 //创建子弹
                 let bullet: cc.Node = null;
@@ -51,19 +62,12 @@ export default class player extends cc.Component {
                 // let bullet = cc.instantiate(this.bulletPre);
                 //创建父物体
                 // bullet.setParent(cc.director.getScene());//canvas
+
                 // 设置子弹位置
-                bullet.x = this.node.
-                    x;
+                bullet.x = this.node.x;
                 bullet.y = this.node.y + 64;
             }
-
         }, 0.5);
-        this.schedule(() => {
-            if (this.isPlay == "die") {
-                this.node.active = false;
-            }
-        }, 1);
-
     }
 
     onLoad() {
