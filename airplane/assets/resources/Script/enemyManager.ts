@@ -39,7 +39,7 @@ export default class enemyManeger extends cc.Component {
                 enemy.setParent(cc.director.getScene());
                 // 设置初始位置
                 enemy.x = Math.random() * 640;
-                enemy.y = 970;
+                enemy.y = 1000;
             }
 
         }, 1);
@@ -54,7 +54,7 @@ export default class enemyManeger extends cc.Component {
                 enemy2.setParent(cc.director.getScene());
                 // 设置初始位置
                 enemy2.x = Math.random() * 640;
-                enemy2.y = 970;
+                enemy2.y = 1000;
             }
 
         }, 3);
@@ -71,7 +71,7 @@ export default class enemyManeger extends cc.Component {
                 boss.x = 320;
                 boss.y = 1200;
             }
-        }, 20);
+        }, 30);
     }
 
     // addScore() {

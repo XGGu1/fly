@@ -41,12 +41,26 @@ export default class boss extends cc.Component {
         this.node.stopAllActions();
         setTimeout(() => {
             this.node.destroy();
-        }, 300);
+        }, 500);
+    }
+
+    dieBySelf() {
+        //玩家死亡后boss自行销毁
+        this.schedule(() => {
+            if (Global.game_state == "die") {
+                this.node.getComponent(cc.Animation).play("boss_die");
+                this.boss_state = "die";
+                this.node.stopAllActions();
+                setTimeout(() => {
+                    this.node.destroy();
+                }, 500);
+            }
+        }, 1.5);
     }
 
     attack() {
         this.schedule(() => {
-            if (this.boss_state = "live") {
+            if (this.boss_state == "live") {
                 //创建子弹
                 let enemyBullet = cc.instantiate(this.enemyBullet);
                 //创建父物体
@@ -57,6 +71,8 @@ export default class boss extends cc.Component {
             }
         }, 1.5);
     }
+
+
 
     // onCollisionEnter() {
     //     this.boss_hp -= 1;
@@ -70,6 +86,7 @@ export default class boss extends cc.Component {
     start() {
         this.move();
         this.attack();
+        this.dieBySelf();
     }
 
     update(dt) {
