@@ -6,7 +6,6 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class enemyManeger extends cc.Component {
-    // isPlay = this.getComponent(player).isPlay;
 
     @property(cc.Prefab)
     enemyPre: cc.Prefab = null;
@@ -33,15 +32,14 @@ export default class enemyManeger extends cc.Component {
 
     enemyManager() {
         this.schedule(() => {
-            if (this.player_script.isPlay == "playing") {
+            if (Global.game_state == "playing") {
                 //创建飞机
                 let enemy = cc.instantiate(this.enemyPre);
                 //创建父物体
                 enemy.setParent(cc.director.getScene());
-                // 设置子弹位置
+                // 设置初始位置
                 enemy.x = Math.random() * 640;
                 enemy.y = 970;
-                // enemy.getComponent(enemyControl).addScoreCallBack = ()=>{}
             }
 
         }, 1);
@@ -49,18 +47,31 @@ export default class enemyManeger extends cc.Component {
 
     enemy2Manager() {
         this.schedule(() => {
-            if (this.player_script.isPlay == "playing") {
+            if (Global.game_state == "playing") {
                 //创建飞机
                 let enemy2 = cc.instantiate(this.enemy2Pre);
                 //创建父物体
                 enemy2.setParent(cc.director.getScene());
-                // 设置子弹位置
+                // 设置初始位置
                 enemy2.x = Math.random() * 640;
                 enemy2.y = 970;
-                // enemy.getComponent(enemyControl).addScoreCallBack = ()=>{}
             }
 
         }, 3);
+    }
+
+    bossManager() {
+        this.schedule(() => {
+            if (Global.game_state == "playing") {
+                //创建飞机
+                let boss = cc.instantiate(this.bossPre);
+                //创建父物体
+                boss.setParent(cc.director.getScene());
+                // 设置初始位置
+                boss.x = 320;
+                boss.y = 1200;
+            }
+        }, 20);
     }
 
     // addScore() {
@@ -75,6 +86,7 @@ export default class enemyManeger extends cc.Component {
     start() {
         this.enemyManager();
         this.enemy2Manager();
+        this.bossManager();
 
     }
 

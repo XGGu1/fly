@@ -78,8 +78,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 1,
+    "groupIndex": 1,
     "_id": ""
   },
   {
@@ -141,6 +141,9 @@
       "__id__": 1
     },
     "_enabled": true,
+    "enemyBullet": {
+      "__uuid__": "8e70de64-749b-4b65-ab34-d1a98122ef04"
+    },
     "_id": ""
   },
   {
@@ -151,7 +154,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "tag": 1,
+    "tag": 3,
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,

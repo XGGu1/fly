@@ -34,6 +34,7 @@ export default class enemy2 extends cc.Component {
         this.node.getComponent(cc.Animation).play("enemy2_die");
         this.enemy2_state = "die";
         Global.score += 5;//击败加分
+        this.node.stopAllActions();
         setTimeout(() => {
             this.node.destroy();
         }, 300);
@@ -50,7 +51,7 @@ export default class enemy2 extends cc.Component {
                 enemyBullet.x = this.node.x;
                 enemyBullet.y = this.node.y - 50;
             }
-        }, 1.5);
+        }, 2);
     }
     //玩家重复被子弹打中时会重复播放死亡动画
 

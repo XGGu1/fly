@@ -13,15 +13,12 @@ export default class player extends cc.Component {
     @property(cc.Node)
     Start: cc.Node = null;
 
-
-    isPlay: string = "standby";
-
     // nodePool: cc.NodePool;//对象池
     bullet: cc.Node;//子弹
 
     onCollisionEnter(other) {
         this.node.getComponent(cc.Animation).play("player_die");
-        this.isPlay = "die";
+        Global.game_state = "die";
         if (other.tag == 1) {
             other.getComponent(enemy).die();
         } else if (other.tag == 2) {
@@ -47,7 +44,7 @@ export default class player extends cc.Component {
             Global.nodePool.put(this.bullet);
         }
         this.schedule(() => {
-            if (this.isPlay == "playing") {
+            if (Global.game_state == "playing") {
                 //创建子弹
                 let bullet: cc.Node = null;
                 // 通过 size 接口判断对象池中是否有空闲的对象

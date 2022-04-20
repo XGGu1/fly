@@ -1,3 +1,4 @@
+import boss from "./boss";
 import enemy from "./enemy";
 import enemy2 from "./enemy2";
 import { Global } from "./Global";
@@ -20,6 +21,12 @@ export default class bullet extends cc.Component {
         }
         if (other.tag == 2) {
             let script = other.node.getComponent(enemy2)
+            script.hurt();
+            this.node.destroy();
+            Global.nodePool.put(this.node);
+        }
+        if (other.tag == 3) {
+            let script = other.node.getComponent(boss)
             script.hurt();
             this.node.destroy();
             Global.nodePool.put(this.node);

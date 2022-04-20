@@ -30,7 +30,7 @@ export default class uiControl extends cc.Component {
     }
     start() {
         this.start_gmae.on(cc.Node.EventType.TOUCH_START, () => {
-            this.player_script.isPlay = "playing";
+            Global.game_state = "playing";
             this.btn_start.active = false;
             this.player.x = 320;
             this.player.y = 200;
@@ -39,22 +39,10 @@ export default class uiControl extends cc.Component {
             Global.score = 0;
 
         })
-        // this.schedule(() => {
-        //     console.log("开启了");
-        //     if (this.player_script.isPlay == "die") {
-        //         this.node.active = true;
-        //         console.log("进来了");
-        //     }
-        // }, 3);
 
     }
 
     update(dt) {
         this.lbl_score.string = Global.score + ""
-        // if (this.player_script.isPlay == "die") {
-        //     this.btn_start.active = true;
-        //     // this.player.setPosition(320, 200)
-        //     console.log("进来了");
-        // }
     }
 }

@@ -1,3 +1,4 @@
+import { Global } from "./Global";
 import player from "./player";
 
 const { ccclass, property } = cc._decorator;
@@ -15,7 +16,7 @@ export default class bg_move extends cc.Component {
 
 
     bgMove() {
-        if (this.player_script.isPlay != "playing") {
+        if (Global.game_state != "playing") {
             return;
         }
         for (let bgNode of this.node.children) {
